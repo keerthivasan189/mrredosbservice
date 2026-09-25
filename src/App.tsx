@@ -18,6 +18,7 @@ import ReviewsPage from "./pages/ReviewsPage";
 import FAQPage from "./pages/FAQPage";
 import ServiceAreaPage from "./pages/ServiceAreaPage";
 import ContactPage from "./pages/ContactPage";
+import Todos from "./pages/Todos";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
               <Route path="/faq" element={<FAQPage />} />
               <Route path="/service-areas" element={<ServiceAreaPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/todos" element={<Todos />} />
               <Route path="/login" element={<Login />} />
               <Route
                 path="/dashboard/*"
