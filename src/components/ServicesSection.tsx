@@ -16,6 +16,13 @@ import bajajLogo from "@/assets/brands/bajaj.png";
 import ktmLogo from "@/assets/brands/ktm.png";
 import kiaLogo from "@/assets/brands/kia.png";
 import fordLogo from "@/assets/brands/ford.png";
+import heroLogo from "@/assets/brands/hero.png";
+import ducatiLogo from "@/assets/brands/ducati.png";
+import apriliaLogo from "@/assets/brands/aprilia.png";
+import tvsLogo from "@/assets/brands/tvs.png";
+import atherLogo from "@/assets/brands/ather.png";
+import olaLogo from "@/assets/brands/ola.png";
+import riverLogo from "@/assets/brands/river.png";
 
 type Service = {
   icon: typeof Car;
@@ -51,30 +58,39 @@ const electricBikeServices: Service[] = [
 
 // ─── Brand logos marquee ────────────────────────────────
 const brands = [
-  { name: "Honda", logo: hondaLogo },
-  { name: "Toyota", logo: toyotaLogo },
-  { name: "Hyundai", logo: hyundaiLogo },
-  { name: "Maruti Suzuki", logo: marutiLogo },
-  { name: "Tata", logo: tataLogo },
-  { name: "Mahindra", logo: mahindraLogo },
-  { name: "BMW", logo: bmwLogo },
-  { name: "Mercedes", logo: mercedesLogo },
-  { name: "Yamaha", logo: yamahaLogo },
-  { name: "Royal Enfield", logo: royalenfieldLogo },
-  { name: "Bajaj", logo: bajajLogo },
-  { name: "KTM", logo: ktmLogo },
-  { name: "Kia", logo: kiaLogo },
-  { name: "Ford", logo: fordLogo },
+  { name: "Honda", logo: hondaLogo, types: ["car"] },
+  { name: "Toyota", logo: toyotaLogo, types: ["car"] },
+  { name: "Hyundai", logo: hyundaiLogo, types: ["car"] },
+  { name: "Maruti Suzuki", logo: marutiLogo, types: ["car"] },
+  { name: "Tata", logo: tataLogo, types: ["car"] },
+  { name: "Mahindra", logo: mahindraLogo, types: ["car"] },
+  { name: "BMW", logo: bmwLogo, types: ["car"] },
+  { name: "Mercedes", logo: mercedesLogo, types: ["car"] },
+  { name: "Yamaha", logo: yamahaLogo, types: ["bike"] },
+  { name: "Royal Enfield", logo: royalenfieldLogo, types: ["bike"] },
+  { name: "Bajaj", logo: bajajLogo, types: ["bike"] },
+  { name: "KTM", logo: ktmLogo, types: ["bike"] },
+  { name: "Hero", logo: heroLogo, types: ["bike", "electric"] },
+  { name: "TVS", logo: tvsLogo, types: ["bike", "electric"] },
+  { name: "Ducati", logo: ducatiLogo, types: ["bike"] },
+  { name: "Aprilia", logo: apriliaLogo, types: ["bike"] },
+  { name: "Ather", logo: atherLogo, types: ["electric"] },
+  { name: "Ola", logo: olaLogo, types: ["electric"] },
+  { name: "River", logo: riverLogo, types: ["electric"] },
+  { name: "Kia", logo: kiaLogo, types: ["car"] },
+  { name: "Ford", logo: fordLogo, types: ["car"] },
 ];
 
-const BrandMarquee = () => {
-  const doubled = [...brands, ...brands];
+const BrandMarquee = ({ activeTab }: { activeTab: "bike" | "car" | "electric" }) => {
+  const filteredBrands = brands.filter(brand => brand.types.includes(activeTab));
+  const displayBrands = [...filteredBrands, ...filteredBrands, ...filteredBrands, ...filteredBrands];
+  
   return (
     <div className="w-full overflow-hidden py-8 relative">
       <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
       <div className="flex animate-marquee gap-12 w-max">
-        {doubled.map((brand, i) => (
+        {displayBrands.map((brand, i) => (
           <div
             key={`${brand.name}-${i}`}
             className="flex flex-col items-center gap-2 min-w-[100px] group"
@@ -213,7 +229,7 @@ const ServicesSection = () => {
           className="mb-10"
         >
           <p className="text-center text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2 font-medium">Brands We Service in Bangalore</p>
-          <BrandMarquee />
+          <BrandMarquee activeTab={activeTab} />
         </motion.div>
 
         <motion.div
