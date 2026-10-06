@@ -142,7 +142,7 @@ const BookingSection = () => {
 
       <div className="container mx-auto max-w-2xl relative">
         {/* Background slideshow */}
-        <div className="absolute -inset-8 sm:-inset-12 z-0">
+        <div className="absolute -inset-8 sm:-inset-12 z-0 pointer-events-none">
           <BackgroundSlideshow />
         </div>
 
@@ -178,7 +178,6 @@ const BookingSection = () => {
           className="relative z-10"
           style={{
             perspective: 1200,
-            transformStyle: "preserve-3d",
           }}
         >
           <motion.form
@@ -187,7 +186,6 @@ const BookingSection = () => {
             style={{
               rotateX,
               rotateY,
-              transformStyle: "preserve-3d",
             }}
           >
             {/* Dynamic glow that follows cursor */}
