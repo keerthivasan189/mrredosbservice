@@ -1,32 +1,50 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.png" type="image/png" />
-    <title>Best Bike, Car & Electric Bike Service Near HSR Layout Bangalore | Mr Red OSB Service</title>
-    <meta name="description" content="Looking for bike, car or electric bike service near you? Mr Red OSB Service offers fast, affordable bike, car & EV repair near HSR Layout & Sarjapur Road in Bangalore. 24/7 emergency roadside assistance.">
-    <meta name="keywords" content="bike service in Bangalore, car service in Bangalore, electric bike service Bangalore, EV bike repair near me, electric scooter service Bangalore, Ola electric service, Ather service center, bike service near me, car service near me, mechanic near me, bike service near HSR Layout, car service near Sarjapur Road, mechanic near Bommanahalli, bike repair Bangalore near me, affordable bike service in Bangalore, best car service center near me, same day bike service Bangalore, doorstep bike service, doorstep car service, roadside assistance, emergency mechanic, Mr Red OSB Service">
-    <meta name="author" content="Mr Red OSB Service" />
-    <meta name="geo.region" content="IN-KA" />
-    <meta name="geo.placename" content="Bangalore" />
-    <link rel="canonical" href="https://mrredosbservice.com/" />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Best Bike, Car & Electric Bike Service Near HSR Layout Bangalore | Mr Red OSB Service">
-    <meta property="og:description" content="Looking for bike, car or electric bike service near you? Mr Red OSB Service offers fast, affordable bike, car & EV repair near HSR Layout & Sarjapur Road in Bangalore.">
-    <meta property="og:url" content="https://mrredosbservice.com/">
-    <meta property="og:image" content="https://mrredosbservice.com/brand-logo.png">
-    <meta property="og:locale" content="en_IN" />
-    <meta property="og:site_name" content="Mr Red OSB Service" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.png" type="image/png" id="favicon" />
+  <script>
+    const setFavicon = (isDark) => {
+      const link = document.getElementById('favicon');
+      if (link) {
+        link.href = isDark ? '/favicon.png' : '/favicon-light.png';
+      }
+    };
+    const matcher = window.matchMedia('(prefers-color-scheme: dark)');
+    setFavicon(matcher.matches);
+    matcher.addEventListener('change', e => setFavicon(e.matches));
+  </script>
+  <title>Best Bike, Car & Electric Bike Service Near HSR Layout Bangalore | Mr Red OSB Service</title>
+  <meta name="description"
+    content="Looking for bike, car or electric bike service near you? Mr Red OSB Service offers fast, affordable bike, car & EV repair near HSR Layout & Sarjapur Road in Bangalore. 24/7 emergency roadside assistance.">
+  <meta name="keywords"
+    content="bike service in Bangalore, car service in Bangalore, electric bike service Bangalore, EV bike repair near me, electric scooter service Bangalore, Ola electric service, Ather service center, bike service near me, car service near me, mechanic near me, bike service near HSR Layout, car service near Sarjapur Road, mechanic near Bommanahalli, bike repair Bangalore near me, affordable bike service in Bangalore, best car service center near me, same day bike service Bangalore, doorstep bike service, doorstep car service, roadside assistance, emergency mechanic, Mr Red OSB Service">
+  <meta name="author" content="Mr Red OSB Service" />
+  <meta name="geo.region" content="IN-KA" />
+  <meta name="geo.placename" content="Bangalore" />
+  <link rel="canonical" href="https://mrredosbservice.com/" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Best Bike, Car & Electric Bike Service Near HSR Layout Bangalore | Mr Red OSB Service">
-    <meta name="twitter:description" content="Fast, affordable bike, car & electric bike repair near HSR Layout & Sarjapur Road, Bangalore. EV battery, motor diagnostics & 24/7 roadside assistance.">
-    <meta name="twitter:image" content="https://mrredosbservice.com/brand-logo.png">
+  <meta property="og:type" content="website" />
+  <meta property="og:title"
+    content="Best Bike, Car & Electric Bike Service Near HSR Layout Bangalore | Mr Red OSB Service">
+  <meta property="og:description"
+    content="Looking for bike, car or electric bike service near you? Mr Red OSB Service offers fast, affordable bike, car & EV repair near HSR Layout & Sarjapur Road in Bangalore.">
+  <meta property="og:url" content="https://mrredosbservice.com/">
+  <meta property="og:image" content="https://mrredosbservice.com/brand-logo.png">
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:site_name" content="Mr Red OSB Service" />
 
-    <!-- JSON-LD: LocalBusiness + AutoRepair -->
-    <script type="application/ld+json">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title"
+    content="Best Bike, Car & Electric Bike Service Near HSR Layout Bangalore | Mr Red OSB Service">
+  <meta name="twitter:description"
+    content="Fast, affordable bike, car & electric bike repair near HSR Layout & Sarjapur Road, Bangalore. EV battery, motor diagnostics & 24/7 roadside assistance.">
+  <meta name="twitter:image" content="https://mrredosbservice.com/brand-logo.png">
+
+  <!-- JSON-LD: LocalBusiness + AutoRepair -->
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": ["AutoRepair", "LocalBusiness"],
@@ -86,8 +104,8 @@
     }
     </script>
 
-    <!-- JSON-LD: FAQPage -->
-    <script type="application/ld+json">
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -127,9 +145,11 @@
       ]
     }
     </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>

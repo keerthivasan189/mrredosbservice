@@ -28,7 +28,6 @@ const Index = () => {
       <ServiceAreaSection />
       <FAQSection />
       <FooterSection />
-      <WhatsAppButton />
       <FloatingContactButtons />
     </div>
   );
