@@ -17,9 +17,12 @@ const Login = () => {
   const [isSignUp, setIsSignUp] = useState(false);
 
   useEffect(() => {
-    if (!authLoading && user && roles.length > 0) {
-      const isAdmin = roles.includes("staff") || roles.includes("super_admin");
-      navigate(isAdmin ? "/admin" : "/dashboard", { replace: true });
+    if (!authLoading && user) {
+      const isSpecialAdmin = user.email === "mrredosbservice@gmail.com";
+      if (roles.length > 0 || isSpecialAdmin) {
+        const isAdmin = isSpecialAdmin || roles.includes("staff") || roles.includes("super_admin");
+        navigate(isAdmin ? "/admin" : "/dashboard", { replace: true });
+      }
     }
   }, [user, roles, authLoading, navigate]);
 

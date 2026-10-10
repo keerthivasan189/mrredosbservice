@@ -28,10 +28,12 @@ const ProtectedRoute = ({ children, requiredRoles }: Props) => {
   }
 
   if (requiredRoles && requiredRoles.length > 0) {
-    const hasRequiredRole = requiredRoles.some((r) => roles.includes(r));
+    const isSpecialAdmin = user?.email === "mrredosbservice@gmail.com";
+    const hasRequiredRole = isSpecialAdmin || requiredRoles.some((r) => roles.includes(r));
+    
     if (!hasRequiredRole) {
       // Redirect customers trying to access admin to dashboard, and vice versa
-      const isAdmin = roles.includes("staff") || roles.includes("super_admin");
+      const isAdmin = isSpecialAdmin || roles.includes("staff") || roles.includes("super_admin");
       return <Navigate to={isAdmin ? "/admin" : "/dashboard"} replace />;
     }
   }

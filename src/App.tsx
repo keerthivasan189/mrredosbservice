@@ -18,6 +18,9 @@ import ReviewsPage from "./pages/ReviewsPage";
 import FAQPage from "./pages/FAQPage";
 import ServiceAreaPage from "./pages/ServiceAreaPage";
 import ContactPage from "./pages/ContactPage";
+import BikeServicePage from "./pages/BikeServicePage";
+import CarServicePage from "./pages/CarServicePage";
+import EVServicePage from "./pages/EVServicePage";
 import Todos from "./pages/Todos";
 
 const queryClient = new QueryClient();
@@ -33,6 +36,9 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/services" element={<ServicesPage />} />
+              <Route path="/bike-service" element={<BikeServicePage />} />
+              <Route path="/car-service" element={<CarServicePage />} />
+              <Route path="/ev-service" element={<EVServicePage />} />
               <Route path="/how-it-works" element={<HowItWorksPage />} />
               <Route path="/book-now" element={<BookingPage />} />
               <Route path="/reviews" element={<ReviewsPage />} />

@@ -169,7 +169,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="text-foreground">Bike, Car & Electric Bike Service in Bangalore,</span>
+          <span className="text-foreground">Bike, car and electric bike service in HSR Layout,</span>
           <br />
           <span className="text-gradient">At Your Doorstep</span>
         </motion.h1>
